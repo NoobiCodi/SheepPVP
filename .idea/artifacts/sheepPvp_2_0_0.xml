@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="sheepPvp-2.0.0">
+    <output-path>$PROJECT_DIR$/../../BattleSheep/plugins</output-path>
+    <root id="archive" name="sheepPvp-2.0.0.jar">
+      <element id="module-output" name="SheepPvp" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/config.json" />
+    </root>
+  </artifact>
+</component>

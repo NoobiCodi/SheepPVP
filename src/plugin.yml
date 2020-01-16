@@ -1,0 +1,29 @@
+name: SheepPvp
+main: fr.mrartichaud.sheeppvp.SheepPvp
+version: 2.0.0
+api-version: 1.13
+
+commands:
+  say:
+    usage: /say <message>
+    description: Cannot be use on this server
+  broadcast:
+    usage: /broadcast <message>
+    description: Broadcast a message
+    permission: sheeppvp.broadcast
+
+  clearlag:
+    usage: /clearlag
+    description: Clear all dropped items
+    permission: sheeppvp.clearlag
+  clearall:
+    usage: /clearall
+    description: Clear potion effect, inventory etc ...
+    permission: sheeppvp.clearall
+
+  register:
+    usage: /register <password> <confirmation_password>
+    description: Register yourself
+  login:
+    usage: /login <password>
+    description: Login yourself

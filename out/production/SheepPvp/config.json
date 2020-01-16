@@ -1,0 +1,188 @@
+{
+  "version": "2.0.0",
+
+  "kitpvp_classique": {
+    "classes": {
+      "Médiéval": {
+        "name": "medieval",
+        "displayName": "Médiéval",
+        "kits": {
+          "chevalier": {
+            "name": "chevalier",
+            "displayName": "Chevalier",
+            "logo": {
+              "name": "Chevalier",
+              "lore": [],
+              "item": "IRON_SWORD",
+              "enchants": []
+            },
+            "items": [
+              {
+                "item": "IRON_SWORD",
+                "enchants": [
+                  {
+                    "enchant": "sharpness",
+                    "level": 2
+                  }
+                ]
+              },
+              {
+                "item": "SNOWBALL",
+                "quantity": 16
+              }
+            ],
+            "potionEffects": [
+              {
+                "type": "SPEED",
+                "duration": 100000,
+                "amp": 2
+              }
+            ],
+            "sheepArmor": {
+              "helmet": {
+                "item": "IRON_HELMET",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 2
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
+              },
+              "chestplate": {
+                "item": "IRON_CHESTPLATE",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 2
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
+              },
+              "leggings": {
+                "item": "IRON_LEGGINGS",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 2
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
+              },
+              "boots": {
+                "item": "IRON_BOOTS",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 2
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "Vikings": {
+        "name": "vikings",
+        "displayName": "Vikings",
+        "kits": {}
+      },
+      "Dynastie": {
+        "name": "dynastie",
+        "displayName": "Dynastie",
+        "kits": {}
+      },
+      "Dieux Grecs": {
+        "name": "dieuxgrecs",
+        "displayName": "Dieux Grecs",
+        "kits": {}
+      },
+      "Fantastique": {
+        "name": "fantastique",
+        "displayName": "Fantastique",
+        "kits": {}
+      },
+      "Animaux": {
+        "name": "animaux",
+        "displayName": "Animaux",
+        "kits": {}
+      }
+    }
+  },
+
+  "auth": {
+    "msg": {
+      "only_player": "Only player can execute this command",
+
+      "login_usage": "USAGE : /login <password>",
+      "already_login": "You are already login",
+      "notlogin_register": "You are not login, please register",
+      "success_login": "successfully login !",
+      "wrong_password": "wrong password !",
+      "spam_login": "Please login with /login <password>",
+
+      "register_usage": "USAGE : /register <password> <confirmation_password>",
+      "already_register": "You are already registered, please login",
+      "too_small": "Your password is too small, minimum %chars% chars !",
+      "too_big": "Your password is too big, maximum %chars% chars !",
+      "success_register": "successfully register !",
+      "spam_register": "Please register with /register <password> <confirmation_password>",
+
+      "min_chars": 6,
+      "max_chars": 15
+    }
+  },
+
+  "guis": {
+    "menus": {
+      "lobby_menu": {
+        "title": "Lobby"
+      },
+      "kitpvp_menu": {
+        "title": "Choose your kit"
+      }
+    }
+  },
+
+  "items": {
+    "lobby_gui_menu_item": {
+      "title": "Lobby Menu"
+    },
+    "spawn_gui_menu_item": {
+      "title": "Choose your kit"
+    }
+  },
+
+  "tps": {
+    "spawn_lobby": {
+      "x": -233,
+      "y": 4,
+      "z": 233
+    },
+    "spawn_kitpvp": {
+      "x": -252,
+      "y": 4,
+      "z": 235
+    }
+  },
+
+  "clearlag": {
+    "interval_in_seconds": 300,
+    "msg_global": "§4[ClearLag]§e %items% items effacés",
+    "msg_player": "§4[ClearLag]§a Vous avez effacé %items% items",
+    "world": "world"
+  }
+}
