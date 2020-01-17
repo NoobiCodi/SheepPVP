@@ -179,6 +179,12 @@
     }
   },
 
+  "msg": {
+    "welcome_msg": "Say welcome to %player% !",
+    "join_msg": "Say hello to %player% !",
+    "bye_msg": "Goodbye %player% !"
+  },
+
   "clearlag": {
     "interval_in_seconds": 300,
     "msg_global": "§4[ClearLag]§e %items% items effacés",

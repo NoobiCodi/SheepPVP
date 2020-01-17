@@ -4,6 +4,7 @@ import fr.mrartichaud.sheeppvp.SheepPvp;
 import fr.mrartichaud.sheeppvp.commands.ClearAllCommand;
 import fr.mrartichaud.sheeppvp.items.KitPvpMenuItem;
 import fr.mrartichaud.sheeppvp.utils.Args;
+import fr.mrartichaud.sheeppvp.utils.LocationsFunctions;
 import fr.mrartichaud.sheeppvp.utils.PlayerStates;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -26,12 +27,7 @@ public class KitPvpLobbyItem implements LobbyItemFunction {
                 player.sendMessage("An error occured, please try to rejoin the server !");
             }
 
-            Location spawnLocation = new Location(
-                    player.getWorld(),
-                    sheepPvp.configJson.getInt("tps.spawn_kitpvp.x"),
-                    sheepPvp.configJson.getInt("tps.spawn_kitpvp.y"),
-                    sheepPvp.configJson.getInt("tps.spawn_kitpvp.z")
-            );
+            Location spawnLocation = LocationsFunctions.getLocation(player.getWorld(), sheepPvp, "tps.spawn_kitpvp");
 
             player.teleport(spawnLocation);
             ClearAllCommand.clearPlayer(player);

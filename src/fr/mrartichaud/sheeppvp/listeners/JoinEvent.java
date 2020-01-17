@@ -3,6 +3,7 @@ package fr.mrartichaud.sheeppvp.listeners;
 import fr.mrartichaud.sheeppvp.SheepPvp;
 import fr.mrartichaud.sheeppvp.commands.ClearAllCommand;
 import fr.mrartichaud.sheeppvp.items.LobbyGuiMenuItem;
+import fr.mrartichaud.sheeppvp.utils.LocationsFunctions;
 import fr.mrartichaud.sheeppvp.utils.PlayerStates;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -43,12 +44,7 @@ public class JoinEvent {
 
         player.getInventory().setItem(4, lgmItemStack);
 
-        Location spawnLocation = new Location(
-                e.getPlayer().getWorld(),
-                sheepPvp.configJson.getInt("tps.spawn_lobby.x"),
-                sheepPvp.configJson.getInt("tps.spawn_lobby.y"),
-                sheepPvp.configJson.getInt("tps.spawn_lobby.z")
-        );
+        Location spawnLocation = LocationsFunctions.getLocation(player.getWorld(), sheepPvp, "tps.spawn_lobby");
 
         player.teleport(spawnLocation);
     }
