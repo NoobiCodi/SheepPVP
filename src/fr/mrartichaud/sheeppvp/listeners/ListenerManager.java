@@ -38,6 +38,7 @@ public class ListenerManager implements Listener {
 
         new QuitEvent(sheepPvp).onQuit(e);
         e.setQuitMessage(sheepPvp.configJson.getString("msg.bye_msg").replaceAll("%player%", player.getName()));
+        sheepPvp.sheepLogger.info(player.getName() + " leaved the server !");
     }
 
     @EventHandler
