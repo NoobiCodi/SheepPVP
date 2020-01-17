@@ -6,18 +6,20 @@ import fr.mrartichaud.sheeppvp.kits.KitsFactory;
 import fr.mrartichaud.sheeppvp.listeners.ListenerManager;
 import fr.mrartichaud.sheeppvp.logs.SheepLogger;
 import org.bukkit.ChatColor;
+import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.json.simple.JSONObject;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class SheepPvp extends JavaPlugin {
     public String prefix;
     public SheepLogger sheepLogger;
     public KitsFactory kitsFactory;
     public HashMap<String, JSONObject> playersData;
-
+    public HashMap<UUID, PermissionAttachment> playerPermissions;
     public JsonFile configJson;
     public JsonFile playersJson;
     public JsonFile authJson;
@@ -31,6 +33,7 @@ public class SheepPvp extends JavaPlugin {
     @Override
     public void onEnable() {
         playersData = new HashMap<>();
+        playerPermissions = new HashMap<>();
 
         configJson = new JsonFile(new File(getDataFolder(), "config.json"), this);
         playersJson = new JsonFile(new File(getDataFolder(), "players.json"), this);

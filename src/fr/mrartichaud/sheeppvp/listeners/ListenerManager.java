@@ -2,6 +2,7 @@ package fr.mrartichaud.sheeppvp.listeners;
 
 import fr.mrartichaud.sheeppvp.SheepPvp;
 import fr.mrartichaud.sheeppvp.kits.KitsFactory;
+import fr.mrartichaud.sheeppvp.permissions.PermissionsManager;
 import fr.mrartichaud.sheeppvp.utils.PlayerStates;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,10 +13,12 @@ import org.bukkit.event.player.*;
 public class ListenerManager implements Listener {
     private SheepPvp sheepPvp;
     private KitsFactory kitsFactory;
+    private PermissionsManager permissionsManager;
 
     public ListenerManager(SheepPvp sheepPvp, KitsFactory kitsFactory) {
         this.sheepPvp = sheepPvp;
         this.kitsFactory = kitsFactory;
+        permissionsManager = new PermissionsManager(sheepPvp);
     }
 
     @EventHandler
@@ -29,6 +32,8 @@ public class ListenerManager implements Listener {
         }
 
         new JoinEvent().onJoin(e, sheepPvp);
+
+        permissionsManager.setupPermissions(player);
         sheepPvp.sheepLogger.info(player.getName() + " joined !");
     }
 

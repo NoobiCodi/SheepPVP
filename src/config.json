@@ -123,6 +123,17 @@
     }
   },
 
+  "grades": {
+    "default": "agneaux",
+    "agneaux": {
+      "name": "agneaux",
+      "displayName": "Agneaux",
+      "prefix": "[Agneaux]",
+      "perms": [
+      ]
+    }
+  },
+
   "auth": {
     "msg": {
       "only_player": "Only player can execute this command",
