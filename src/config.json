@@ -92,6 +92,108 @@
                 ]
               }
             }
+          },
+          "paladin": {
+            "name": "paladin",
+            "displayName": "Paladin",
+            "logo": {
+              "name": "Paladin",
+              "lore": [],
+              "item": "SHIELD",
+              "enchants": []
+            },
+            "items": [
+              {
+                "item": "IRON_SWORD",
+                "enchants": [
+                  {
+                    "enchant": "sharpness",
+                    "level": 1
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 3
+                  }
+                ]
+              },
+              {
+                "item": "CROSSBOW",
+                "enchants": [
+                  {
+                    "enchant": "multishot",
+                    "level": 1
+                  }
+                ]
+              },
+              {
+                "item": "ARROW",
+                "quantity": 16
+              }
+            ],
+            "potionEffects": [
+              {
+                "type": "SLOW",
+                "duration": 100000,
+                "amp": 2
+              }
+            ],
+            "sheepArmor": {
+              "helmet": {
+                "item": "IRON_HELMET",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 3
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 3
+                  }
+                ]
+              },
+              "chestplate": {
+                "item": "IRON_CHESTPLATE",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 2
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 3
+                  }
+                ]
+              },
+              "leggings": {
+                "item": "IRON_LEGGINGS",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 3
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 3
+                  }
+                ]
+              },
+              "boots": {
+                "item": "IRON_BOOTS",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 3
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 3
+                  }
+                ]
+              },
+              "offhand": {
+                "item": "SHIELD"
+              }
+            }
           }
         }
       },

@@ -54,8 +54,9 @@ public class KitsFactory {
                     JSONObject chestplate = sheepArmors.get("chestplate") == null ? null : (JSONObject) sheepArmors.get("chestplate");
                     JSONObject leggings = sheepArmors.get("leggings") == null ? null : (JSONObject) sheepArmors.get("leggings");
                     JSONObject boots = sheepArmors.get("helmet") == null ? null : (JSONObject) sheepArmors.get("boots");
+                    JSONObject offhand = sheepArmors.get("offhand") == null ? null : (JSONObject) sheepArmors.get("offhand");
 
-                    sheepArmor = new SheepArmor(factoreItem(helmet), factoreItem(chestplate), factoreItem(leggings), factoreItem(boots));
+                    sheepArmor = new SheepArmor(factoreItem(helmet), factoreItem(chestplate), factoreItem(leggings), factoreItem(boots), factoreItem(offhand));
                 }
 
                 if (potionsEffectJSON != null) {

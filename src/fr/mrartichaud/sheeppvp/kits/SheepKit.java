@@ -39,6 +39,7 @@ public class SheepKit implements Comparable<SheepKit> {
             if (sheepArmor.chestplate != null) player.getInventory().setChestplate(sheepArmor.chestplate);
             if (sheepArmor.leggings != null) player.getInventory().setLeggings(sheepArmor.leggings);
             if (sheepArmor.boots != null) player.getInventory().setBoots(sheepArmor.boots);
+            if (sheepArmor.offhand != null) player.getInventory().setItemInOffHand(sheepArmor.offhand);
         }
 
         if (potionEffects != null) {
