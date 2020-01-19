@@ -7,6 +7,7 @@ import fr.mrartichaud.sheeppvp.utils.PlayerStates;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
@@ -36,6 +37,16 @@ public class ListenerManager implements Listener {
 
         permissionsManager.setupPermissions(player);
         sheepPvp.sheepLogger.info(player.getName() + " joined !");
+    }
+
+    @EventHandler
+    public void onPickItem(EntityPickupItemEvent e) {
+        //TODO cancel in all states (just dont test)
+    }
+
+    @EventHandler
+    public void onPickupArrow(PlayerPickupArrowEvent e) {
+        //TODO test state of the player + accept tridents
     }
 
     @EventHandler
