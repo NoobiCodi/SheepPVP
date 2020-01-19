@@ -3,21 +3,30 @@ package fr.mrartichaud.sheeppvp.kits;
 import fr.mrartichaud.sheeppvp.SheepPvp;
 import fr.mrartichaud.sheeppvp.items.SheepEnchant;
 import fr.mrartichaud.sheeppvp.items.SheepItem;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class KitsFactory {
     private SheepPvp sheepPvp;
+
+    public static final Map<String, Color> COLORS = new HashMap<String, Color>() {{
+        put("red", Color.RED);
+        put("black", Color.BLACK);
+    }};
 
     public List<SheepClasse> sheepClasses = new ArrayList<>();
 
@@ -123,6 +132,15 @@ public class KitsFactory {
         if (lore != null) itemMeta.setLore(lore);
 
         itemStack.setItemMeta(itemMeta);
+
+        String color = (String) obj.get("color");
+
+        if (color != null) {
+            LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) itemStack.getItemMeta();
+            leatherArmorMeta.setColor(COLORS.get(color));
+            itemStack.setItemMeta(leatherArmorMeta);
+        }
+
         return itemStack;
     }
 }

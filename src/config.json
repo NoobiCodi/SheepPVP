@@ -197,10 +197,71 @@
           }
         }
       },
-      "Vikings": {
-        "name": "vikings",
-        "displayName": "Vikings",
-        "kits": {}
+      "Nordique": {
+        "name": "nordique",
+        "displayName": "Nordique",
+        "kits": {
+          "berserk": {
+            "name": "berserk",
+            "displayName": "Berserk",
+            "logo": {
+              "name": "Berserk",
+              "lore": [],
+              "item": "STONE_AXE",
+              "enchants": []
+            },
+            "items": [
+              {
+                "item": "STONE_AXE",
+                "enchants": [
+                  {
+                    "enchant": "sharpness",
+                    "level": 3
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 4
+                  }
+                ]
+              }
+            ],
+            "potionEffects": [],
+            "sheepArmor": {
+              "helmet": {
+                "item": "DARK_OAK_FENCE_GATE",
+                "enchants": []
+              },
+              "chestplate": {
+                "item": "LEATHER_CHESTPLATE",
+                "color": "black",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 5
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 4
+                  }
+                ]
+              },
+              "boots": {
+                "item": "LEATHER_BOOTS",
+                "color": "black",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 5
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 4
+                  }
+                ]
+              }
+            }
+          }
+        }
       },
       "Dynastie": {
         "name": "dynastie",
