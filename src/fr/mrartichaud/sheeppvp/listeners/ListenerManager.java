@@ -7,6 +7,7 @@ import fr.mrartichaud.sheeppvp.utils.PlayerStates;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
 
@@ -54,6 +55,22 @@ public class ListenerManager implements Listener {
     @EventHandler
     public void onClick(InventoryClickEvent e) {
         new ClickEvent(sheepPvp, kitsFactory).onClick(e);
+    }
+
+    @EventHandler
+    public void onDeath(PlayerDeathEvent e) {
+        Player victim = e.getEntity().getPlayer();
+        Player killer = e.getEntity().getKiller();
+
+        DeathEvent deathEvent = new DeathEvent(e, sheepPvp);
+
+        if (killer != null && killer.getName().equals(victim.getName())) {
+            deathEvent.suicide(victim);
+        } else if (killer != null) {
+            deathEvent.kill(victim, killer);
+        } else {
+            deathEvent.death(victim);
+        }
     }
 
     @EventHandler
