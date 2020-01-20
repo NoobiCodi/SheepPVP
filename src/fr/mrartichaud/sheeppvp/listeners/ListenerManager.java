@@ -4,6 +4,7 @@ import fr.mrartichaud.sheeppvp.SheepPvp;
 import fr.mrartichaud.sheeppvp.kits.KitsFactory;
 import fr.mrartichaud.sheeppvp.permissions.PermissionsManager;
 import fr.mrartichaud.sheeppvp.utils.PlayerStates;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -41,12 +42,21 @@ public class ListenerManager implements Listener {
 
     @EventHandler
     public void onPickItem(EntityPickupItemEvent e) {
-        //TODO cancel in all states (just dont test)
+        if (e.getEntity() instanceof Player) {
+            Player player = ((Player) e.getEntity()).getPlayer();
+
+            if (!player.isOp())
+                e.setCancelled(true);
+        }
     }
 
     @EventHandler
     public void onPickupArrow(PlayerPickupArrowEvent e) {
-        //TODO test state of the player + accept tridents
+        Player player = e.getPlayer();
+
+        if (e.getItem().getItemStack().getType() != Material.TRIDENT)
+            if (!e.getPlayer().isOp())
+                e.setCancelled(true);
     }
 
     @EventHandler
