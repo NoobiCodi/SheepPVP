@@ -35,7 +35,7 @@
               {
                 "type": "SPEED",
                 "duration": 100000,
-                "amp": 2
+                "amp": 1
               }
             ],
             "sheepArmor": {
@@ -192,6 +192,99 @@
               },
               "offhand": {
                 "item": "SHIELD"
+              }
+            }
+          },
+          "archer": {
+            "name": "archer",
+            "displayName": "Archer",
+            "logo": {
+              "name": "Archer",
+              "item": "BOW"
+            },
+            "items": [
+              {
+                "item": "BOW",
+                "enchants": [
+                  {
+                    "enchant": "punch",
+                    "level": 1
+                  }
+                ]
+              },
+              {
+                "item": "WOODEN_SWORD",
+                "enchants": [
+                  {
+                    "enchant": "sharpness",
+                    "level": 1
+                  }
+                ]
+              },
+              {
+                "item": "ARROW",
+                "quantity": 48
+              }
+            ],
+            "potionEffects": [
+              {
+                "type": "SPEED",
+                "duration": 100000,
+                "amp": 2
+              }
+            ],
+            "sheepArmor": {
+              "helmet": {
+                "item": "CHAINMAIL_HELMET",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 1
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
+              },
+              "chestplate": {
+                "item": "CHAINMAIL_CHESTPLATE",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 1
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
+              },
+              "leggings": {
+                "item": "CHAINMAIL_LEGGINGS",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 1
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
+              },
+              "boots": {
+                "item": "CHAINMAIL_BOOTS",
+                "enchants": [
+                  {
+                    "enchant": "protection",
+                    "level": 1
+                  },
+                  {
+                    "enchant": "unbreaking",
+                    "level": 1
+                  }
+                ]
               }
             }
           }

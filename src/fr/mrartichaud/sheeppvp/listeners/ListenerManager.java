@@ -7,11 +7,12 @@ import fr.mrartichaud.sheeppvp.permissions.PermissionsManager;
 import fr.mrartichaud.sheeppvp.utils.LocationsFunctions;
 import fr.mrartichaud.sheeppvp.utils.PlayerStates;
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityPickupItemEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.entity.*;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
 
@@ -29,6 +30,8 @@ public class ListenerManager implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
+
+        player.getAttribute(Attribute.GENERIC_ATTACK_SPEED).setBaseValue(24D);
 
         if (sheepPvp.authJson.getString(player.getName()) == null) {
             e.setJoinMessage(sheepPvp.configJson.getString("msg.welcome_msg").replaceAll("%player%", player.getName()));
@@ -49,6 +52,38 @@ public class ListenerManager implements Listener {
 
             if (!player.isOp())
                 e.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onDamageEntity(EntityDamageEvent e) {
+        if (e.getCause() == EntityDamageEvent.DamageCause.FALL) {
+            e.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onFoodChange(FoodLevelChangeEvent e) {
+        e.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onDropItem(PlayerDropItemEvent e) {
+        if (!e.getPlayer().isOp())
+            e.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onProjectileHit(ProjectileHitEvent e) {
+        if (e.getEntity().getType() == EntityType.SNOWBALL || e.getEntity().getType() == EntityType.EGG || e.getEntity().getType() == EntityType.FISHING_HOOK) {
+            if (e.getHitEntity() instanceof Player) {
+                Player player = (Player) e.getHitEntity();
+
+                if (e.getEntity().getType() == EntityType.SNOWBALL || e.getEntity().getType() == EntityType.EGG)
+                    player.damage(2);
+                if (e.getEntity().getType() == EntityType.FISHING_HOOK)
+                    player.damage(0.1);
+            }
         }
     }
 

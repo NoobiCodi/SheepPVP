@@ -5,6 +5,7 @@ import fr.mrartichaud.sheeppvp.commands.ClearAllCommand;
 import fr.mrartichaud.sheeppvp.items.LobbyGuiMenuItem;
 import fr.mrartichaud.sheeppvp.utils.LocationsFunctions;
 import fr.mrartichaud.sheeppvp.utils.PlayerStates;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -48,5 +49,9 @@ public class JoinEvent {
         Location spawnLocation = LocationsFunctions.getLocation(player.getWorld(), sheepPvp, "tps.spawn_lobby");
 
         player.teleport(spawnLocation);
+
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            sheepPvp.scoreBoardManager.createForPlayer(p);
+        }
     }
 }
