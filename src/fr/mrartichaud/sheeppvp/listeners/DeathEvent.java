@@ -15,13 +15,6 @@ public class DeathEvent {
     public DeathEvent(PlayerDeathEvent e, SheepPvp sheepPvp) {
         this.e = e;
         this.sheepPvp = sheepPvp;
-
-        Player victim = e.getEntity().getPlayer();
-        Player kill = e.getEntity().getKiller();
-
-        if (PlayerStates.testIfContainsState(sheepPvp, victim, PlayerStates.KITPVP)) {
-            ClearAllCommand.clearPlayer(victim);
-        }
     }
 
     public void kill(Player v, Player k) {

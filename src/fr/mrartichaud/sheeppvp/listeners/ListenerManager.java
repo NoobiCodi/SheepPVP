@@ -1,8 +1,10 @@
 package fr.mrartichaud.sheeppvp.listeners;
 
 import fr.mrartichaud.sheeppvp.SheepPvp;
+import fr.mrartichaud.sheeppvp.commands.ClearAllCommand;
 import fr.mrartichaud.sheeppvp.kits.KitsFactory;
 import fr.mrartichaud.sheeppvp.permissions.PermissionsManager;
+import fr.mrartichaud.sheeppvp.utils.LocationsFunctions;
 import fr.mrartichaud.sheeppvp.utils.PlayerStates;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -92,6 +94,16 @@ public class ListenerManager implements Listener {
         } else {
             deathEvent.death(victim);
         }
+    }
+
+    @EventHandler
+    public void onRespawn(PlayerRespawnEvent e) {
+        Player player = e.getPlayer();
+
+        ClearAllCommand.clearPlayer(player);
+
+        if (PlayerStates.testIfContainsState(sheepPvp, player, PlayerStates.KITPVP))
+            LocationsFunctions.getLocation(player.getWorld(), sheepPvp, "tps.spawn_kitpvp");
     }
 
     @EventHandler
