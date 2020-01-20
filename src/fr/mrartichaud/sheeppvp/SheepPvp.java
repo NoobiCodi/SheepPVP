@@ -2,6 +2,7 @@ package fr.mrartichaud.sheeppvp;
 
 import fr.mrartichaud.sheeppvp.commands.*;
 import fr.mrartichaud.sheeppvp.config.JsonFile;
+import fr.mrartichaud.sheeppvp.config.playersdata.PlayersDataManager;
 import fr.mrartichaud.sheeppvp.kits.KitsFactory;
 import fr.mrartichaud.sheeppvp.listeners.ListenerManager;
 import fr.mrartichaud.sheeppvp.logs.SheepLogger;
@@ -23,6 +24,7 @@ public class SheepPvp extends JavaPlugin {
     public JsonFile configJson;
     public JsonFile playersJson;
     public JsonFile authJson;
+    public PlayersDataManager playersDataManager;
 
     public SheepPvp() {
         prefix = ChatColor.RED + "Battle" + ChatColor.YELLOW + "Sheep";
@@ -38,6 +40,8 @@ public class SheepPvp extends JavaPlugin {
         configJson = new JsonFile(new File(getDataFolder(), "config.json"), this);
         playersJson = new JsonFile(new File(getDataFolder(), "players.json"), this);
         authJson = new JsonFile(new File(getDataFolder(), "auth.json"), this);
+
+        playersDataManager = new PlayersDataManager(this);
 
         kitsFactory.factorate();
         getServer().getPluginManager().registerEvents(new ListenerManager(this, kitsFactory), this);

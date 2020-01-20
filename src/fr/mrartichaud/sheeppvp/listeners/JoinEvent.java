@@ -21,6 +21,7 @@ public class JoinEvent {
         playerData.put("game", PlayerStates.LOGGING);
 
         sheepPvp.playersData.put(player.getName(), playerData);
+        sheepPvp.playersDataManager.createNewInstanceIfNotExists(player);
 
         new BukkitRunnable() {
             @Override

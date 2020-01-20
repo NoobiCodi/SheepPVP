@@ -54,13 +54,6 @@ public class JsonFile {
         return jsonObject.get(paths[paths.length - 1]);
     }
 
-//    public void set(String path, Object value) {
-//        String[] paths = path.split("\\.");
-//        JSONObject jsonObject = this.getPath(path, this.jsonObject);
-//
-//        jsonObject.
-//    }
-
     public void save() {
         try (FileWriter file = new FileWriter(this.file)) {
 

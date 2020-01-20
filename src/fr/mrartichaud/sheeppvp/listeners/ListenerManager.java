@@ -103,7 +103,7 @@ public class ListenerManager implements Listener {
         ClearAllCommand.clearPlayer(player);
 
         if (PlayerStates.testIfContainsState(sheepPvp, player, PlayerStates.KITPVP))
-            LocationsFunctions.getLocation(player.getWorld(), sheepPvp, "tps.spawn_kitpvp");
+            e.setRespawnLocation(LocationsFunctions.getLocation(player.getWorld(), sheepPvp, "tps.spawn_kitpvp"));
     }
 
     @EventHandler
